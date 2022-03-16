@@ -6,20 +6,20 @@
 
 ## Welcome to your Banco BPI workspace
 
-## 1 - [Stoplight Account](./1-create-stoplight-account.md)
-
-To be able to view documents and projects, it is necessary to create a Stoplight account.
-[Link](./1-create-stoplight-account.md)
-
-## 2 - [GitHub Account](./1-create-github-account.md)
-
-To be able to build APIs, it is necessary to create a GitHub account.
-[Link](./1-create-github-account.md)
-
-## 3 - [Understanding a little about APIs](./whitepaper-api.md)
+## 1 - [Understanding a little about APIs](./1-whitepaper.md)
 
 A little about the world of APIs and what they are.
-[Link](./whitepaper-api.md)
+[Link](./1-whitepaper.md)
+
+## 2 - [Stoplight Account](./2-create-stoplight-account.md)
+
+To be able to view documents and projects, it is necessary to create a Stoplight account.
+[Link](./2-create-stoplight-account.md)
+
+## 3 - [GitHub Account](./3-create-github-account.md)
+
+To be able to build APIs, it is necessary to create a GitHub account.
+[Link](./3-create-github-account.md)
 
 ---
 
