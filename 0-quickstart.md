@@ -2,6 +2,8 @@
 ![logo_BPI_CxB.png](./static/logo_BPI_CxB.png)
 
 ---
+# Quickstart 
+
 ## Welcome to your Banco BPI workspace
 
 ## 1 - [Stoplight Account](./1-create-stoplight-account.md)
