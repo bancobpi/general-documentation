@@ -1,28 +1,25 @@
-<!-- focus: false -->
-![logo_BPI_CxB.png](./static/logo_BPI_CxB.png)
-
----
-# Quickstart 
+<img src="https://stoplight.io/api/v1/projects/cHJqOjEyMTAzMw/images/FewDetFYfSQ"  height="400" width="600" focus="false" hspace="20">
 
 ## Welcome to your Banco BPI workspace
 
-## 1 - [Understanding a little about APIs](./docs/1-whitepaper.md)
+<br><br>
+<a href="Whitepaper"><img src="https://stoplight.io/api/v1/projects/cHJqOjY2NDEz/images/DFFUGFAJWAc" align="left" height="55" width="55" focus="false" hspace="20"></a>
+[What are APIs and what are the guidelines for Banco BPI](../whitepaper-api.md)
+<br>
 
-A little about the world of APIs and what they are.
-[Link](./docs/1-whitepaper.md)
+<br><br>
+<a href="Stoplight"><img src="https://stoplight.io/api/v1/projects/cHJqOjEyMTAzMw/images/0Caum0AXLn0" align="left" height="55" width="55" focus="false" hspace="20"></a>
+[To be able to view documents and projects, it is necessary to create a Stoplight account.](./docs/2-create-stoplight-account.md)
+<br>
 
-## 2 - [Stoplight Account](./docs/2-create-stoplight-account.md)
+<br><br>
+<a href="Github"><img src="https://stoplight.io/api/v1/projects/cHJqOjEyMTAzMw/images/NYe5yWNOeuo" align="left" height="55" width="55" focus="false" hspace="20"></a>
+[To be able to build APIs, it is necessary to create a GitHub account](./docs/3-create-github-account.md)
+<br><br>
 
-To be able to view documents and projects, it is necessary to create a Stoplight account.
-[Link](./docs/2-create-stoplight-account.md)
-
-## 3 - [GitHub Account](./docs/3-create-github-account.md)
-
-To be able to build APIs, it is necessary to create a GitHub account.
-[Link](./docs/3-create-github-account.md)
-
+<!-- theme: info -->
+> If you can't find what you're looking for or have any questions, please contact the Design Authority team dsi-designauthority@gbpi.loc.
 ---
 
 <!-- focus: false -->
-![Review](https://raw.githubusercontent.com/bancobpi/documentation/v2-whitepaper/docs/static/2021_Banco_BPI.svg?token=GHSAT0AAAAAABSSPNM7LKW6XSAHMMH4P5MGYRSDPVQ)
-
+![Banco BPI](https://img.shields.io/badge/2022-Banco%20BPI%20%C2%A9-orange)
