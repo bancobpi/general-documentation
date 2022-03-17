@@ -1,4 +1,6 @@
+<!-- focus: false -->
 ![Generic badge](https://img.shields.io/badge/Versão-1.0-green.svg)
+<br>
 
 # Whitepaper
 
