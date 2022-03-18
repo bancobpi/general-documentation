@@ -33,7 +33,7 @@ For these requests to be valid, the customer needs to include the following 4 pa
 -   **Headers**
 -   **Body**
 
-![HTTP.png](https://stoplight.io/api/v1/projects/cHJqOjY2NDEz/images/Iueb71gQpD0)
+![HTTP.png](../static/whitepaper_chapter_2_1.jpg)
 
 These 4 parts represent a complete HTTP request.
 
@@ -71,7 +71,7 @@ Upon receiving the request from the client, the server executes it and sends a r
 
 The response structure is practically the same as the request, with the method and URL replaced by the inclusion of a 'Status Code'. Headers and body keep the same order format.
 
-![StatusCode.png](https://stoplight.io/api/v1/projects/cHJqOjY2NDEz/images/nVYee29xfoA)
+![StatusCode.png](../static/whitepaper_chapter_2_2.jpg)
 
 These 3 parts represent a complete HTTP response.
 
@@ -86,7 +86,7 @@ The exchange of data between computers implies the message is understood by both
 JSON is a much simple, easier to read, format. It stands in keys and values.
 Keys represent object's attributes and Values are those attributes values.
 
-![Json.png](https://stoplight.io/api/v1/projects/cHJqOjY2NDEz/images/vQVcWF2z7T8)
+![Json.png](../static/whitepaper_chapter_2_3.jpg)
 
 Example:
 ```json
@@ -173,7 +173,7 @@ While SOAP is a communication protocolo on its own, REST is more an architectura
 
 In recent years, REST has gained strength over SOAP and is currently the most used communication approach using web services.
 
-![SOAPvsREST.png](https://stoplight.io/api/v1/projects/cHJqOjY2NDEz/images/l7sFWDlDayg)
+![SOAPvsREST.png](../static/whitepaper_chapter_2_7.jpg)
 
 The following links have more information on this subject:
 
@@ -675,7 +675,7 @@ SERVER ERROR
 ### 5.1. Error Block
 
 Representation of the error structure created for client and server errors:
-![Error Block.png](https://stoplight.io/api/v1/projects/cHJqOjY2NDEz/images/tRUWQlcQD1w)
+![Error Block.png](../static/whitepaper_chapter_5_1.jpg)
 
 For more details, see the definition of the error block (ErrorBlock.yaml) in the [projeto de definição dos tipos comuns dentro do stoplight](https://bancobpi.stoplight.io/studio/commons-api-definitions?). 
 
