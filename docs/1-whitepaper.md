@@ -706,23 +706,3 @@ For more details, see the definition of the error block (ErrorBlock.yaml) in the
   }
 }
 ```
-
-## 6. Versioning
-
-It is extremely important that the **stability** of an API is maintained.
-
-In a scenario where our clients are external companies (e.g. a fintech), it is not at all desirable to lose credibility of BPI's APIs, as they are in constant change, with the Bank running the risk that external companies will no longer consider BPI in its applications, thus causing a possible loss of business.
-
-Likewise, in a scenario of internal consumption of APIs, this stability is also entirely desired.
-
-That said, the creation of new versions should be considered and avoided whenever possible in order to maintain stability. New minor versions, that don't break compatibility, can be created freely.
-
-If the need arises to create a new version, we must remember:
-
-- Advertise in advance in your own places, whether for external or internal use (site, distribution lists, emails to registered users, etc.)
-- Keep the previous version running for a pre-determined and announced time, as not all customers will immediately upgrade to the new version of our API
-- Document all changes made in the new version (_changelog_).
-
-The (major) version is represented by the URI of the operation, indicating the major 
-
-Version: http://apiURI/api-name/version/resource.
