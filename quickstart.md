@@ -10,12 +10,12 @@
 <br>
 
 <br><br>
-<a href="Stoplight"><img src="https://stoplight.io/api/v1/projects/cHJqOjEyMTAzMw/images/0Caum0AXLn0" align="left" height="55" width="55" focus="false" hspace="20"></a>
+<a href="Stoplight"><img src="https://stoplight.io/api/v1/projects/cHJqOjEyMTg4Ng/images/mWK65CP1RR0" align="left" height="55" width="55" focus="false" hspace="20"></a>
 [To be able to view documents and projects, it is necessary to create a Stoplight account.](./docs/2-create-stoplight-account.md)
 <br>
 
 <br><br>
-<a href="Github"><img src="https://stoplight.io/api/v1/projects/cHJqOjEyMTAzMw/images/NYe5yWNOeuo" align="left" height="55" width="55" focus="false" hspace="20"></a>
+<a href="Github"><img src="https://stoplight.io/api/v1/projects/cHJqOjEyMTg4Ng/images/dr03LjOo25M" align="left" height="55" width="55" focus="false" hspace="20"></a>
 [To be able to build APIs, it is necessary to create a GitHub account](./docs/3-create-github-account.md)
 <br><br>
 
