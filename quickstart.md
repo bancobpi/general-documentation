@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://stoplight.io/api/v1/projects/cHJqOjEyMTAzMw/images/FewDetFYfSQ" alt="drawing" height="400" width="600" focus="false"/>
+  <img src="https://stoplight.io/api/v1/projects/cHJqOjEyMTg4Ng/images/TaY7SWWxFf4" alt="drawing" height="400" width="600" focus="false"/>
 </p>
 
 ## Welcome to your Banco BPI workspace
