@@ -4,7 +4,11 @@
 
 Go to [https://github.com/](https://github.com/)
 
-![github](https://stoplight.io/api/v1/projects/cHJqOjEyMTg4Ng/images/TnVj48P45bE)
+<table>
+  <p align="center">
+    <img src="https://stoplight.io/api/v1/projects/cHJqOjEyMTg4Ng/images/TnVj48P45bE" alt="drawing" focus="false"/>
+  </p>
+</table>
 
 After this step, enter the code received by email.
 
@@ -18,7 +22,11 @@ Account **CREATED**.
 
 Go to [https://bancobpi.stoplight.io/](https://bancobpi.stoplight.io/)
 
-![connect_stopligh_github](https://stoplight.io/api/v1/projects/cHJqOjEyMTg4Ng/images/ZEiCCwvhRSA)
+<table>
+  <p align="center">
+    <img src="https://stoplight.io/api/v1/projects/cHJqOjEyMTg4Ng/images/ZEiCCwvhRSA" focus="false"/>
+  </p>
+</table>
 
 Now you have the GitHub account created and synced with StopLight.
 
