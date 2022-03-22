@@ -1,6 +1,6 @@
 # Stoplight Account
 
-## How to Create a Stopligh Account
+## How to Create a Stoplight Account
 
 Go to [https://bancobpi.stoplight.io/](https://bancobpi.stoplight.io/)
 
