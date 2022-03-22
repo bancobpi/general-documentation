@@ -1,5 +1,7 @@
 <!-- focus: false -->
-![Generic badge](https://img.shields.io/badge/Versão-1.0-green.svg)
+![Generic badge](https://img.shields.io/badge/Versão-1.0-green.svg) 
+<br>
+![Banco BPI](https://img.shields.io/badge/2022-Banco%20BPI%20%C2%A9-orange)
 <br>
 
 # Whitepaper
@@ -26,36 +28,36 @@ HTTP communication is based on the "Request-Response" concept. The client sends 
 
 ### 2.1. HTTP Request
 
-For these requests to be valid, the customer needs to include the following 4 parameters:
+<table>
+  <p align="center">
+    <img src="https://stoplight.io/api/v1/projects/cHJqOjY2NDEz/images/Iueb71gQpD0" alt="drawing" height="200" width="300" focus="false"/>
+  </p>
+</table>
 
--   **URL** (Uniform Resource Locator)
--   **Method**
--   **Headers**
--   **Body**
+For these requests to be valid, the customer needs to include the parameters of image. These 4 parts represent a complete HTTP request.
 
-![HTTP.png](https://stoplight.io/api/v1/projects/cHJqOjY2NDEz/images/Iueb71gQpD0)
-
-These 4 parts represent a complete HTTP request.
-
-#### 2.2.1. URL
+#### 2.1.1. URL
 
 In APIs the concept of URL is used in the sense of including names (such as customers, products, tweets), making the URL easy for the client to understand, in order to tell the server which entity it wants to interact with. These entities are called [resources](#31-resources).
 
 #### 2.1.2. Method
 
-The 'method' of the request tells the server what kind of action the client wants it to take. Correspond to [HTTP protocol verbs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods).
+The 'method' of the request tells the server what kind of action the client wants it to take. Corresponds to [HTTP protocol verbs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods).
 
 We considered it important to implement the following verbs in the BPI APIs:
 
 -   **GET** – Asks the server to read an instance of a resource or list instances of a resource.
 -   **POST** - Asks the server to create a new instance of a resource.
--   **PUT** - Asks the server to update the instance of a resource
--   **DELETE** - Asks the server to delete an instance of a resource - logical delete, it can mean inactivate, or change the state of an instance, not necessarily eliminating a record in a data table
--   **PATCH** - this method asks the server to update **part** of a resource's information. We chose, for technical reasons of implementation, **not to implement this method**. 
+-   **PUT** - Asks the server to update the instance of a resource.
+-   **DELETE** - Asks the server to delete an instance of a resource - logical delete, it can mean inactivate, or change the state of an instance, not necessarily eliminating a record in a data table.
 
 In the implementation of APIs you must be **faithful to verbs**: GET must not change the state of the resource.
 
-The PUT can cause problems with the [versioning](#6-versioning) of the APIs because, by adding a new attribute to this method, we would "force" our clients to update their applications (at the risk of invoking the method without passing this new attribute, it is being "cleaned" from the database).
+<!-- theme: info -->
+> **PATCH** - this method asks the server to update **part** of a resource's information. We chose, for technical reasons of implementation, **not to implement this method**. 
+
+<!-- theme: warning -->
+>The PUT can cause problems with the [versioning](#6-versioning) of the APIs because, by adding a new attribute to this method, we would "force" our clients to update their applications (at the risk of invoking the method without passing this new attribute, it is being "cleaned" from the database).
 
 #### 2.1.3 Headers
 
@@ -67,13 +69,13 @@ The body will contain the data that the client wants to send to the server. Unli
 
 ### 2.2. HTTP Response
 
-Upon receiving the request from the client, the server executes it and sends a response back.
+<table>
+  <p align="center">
+    <img src="https://stoplight.io/api/v1/projects/cHJqOjY2NDEz/images/nVYee29xfoA" alt="drawing" height="200" width="300" focus="false"/>
+  </p>
+</table>
 
-The response structure is practically the same as the request, with the method and URL replaced by the inclusion of a 'Status Code'. Headers and body keep the same order format.
-
-![StatusCode.png](https://stoplight.io/api/v1/projects/cHJqOjY2NDEz/images/nVYee29xfoA)
-
-These 3 parts represent a complete HTTP response.
+Upon receiving the request from the client, the server executes it and sends a response back. The response structure is practically the same as the request, with the method and URL replaced by the inclusion of a 'Status Code'. Headers and body keep the same order format. These 3 parts represent a complete HTTP response.
 
 #### 2.2.1. Status Codes
 
@@ -81,12 +83,13 @@ State numeric code, with 3 digits with unique meaning. See [HTTP Status Code](#5
 
 ### 2.3. JSON
 
-The exchange of data between computers implies the message is understood by both. The most common message formats in APIs are JSON (JavasScript Object Notation) and XML (Extensible Markup Language).
+<table>
+  <p align="center">
+    <img src="https://stoplight.io/api/v1/projects/cHJqOjY2NDEz/images/vQVcWF2z7T8" alt="drawing" height="300" width="400" focus="false"/>
+  </p>
+</table>
 
-JSON is a much simple, easier to read, format. It stands in keys and values.
-Keys represent object's attributes and Values are those attributes values.
-
-![Json.png](https://stoplight.io/api/v1/projects/cHJqOjY2NDEz/images/vQVcWF2z7T8)
+The exchange of data between computers implies the message is understood by both. The most common message formats in APIs are JSON (JavasScript Object Notation) and XML (Extensible Markup Language). JSON is a much simple, easier to read, format. It stands in keys and values. Keys represent object's attributes and Values are those attributes values.
 
 Example:
 ```json
@@ -110,7 +113,7 @@ It works on an application data exposure logic, ie it is not functionality-orien
 This communication is done using the HTTP protocol for message transport, using the HTTP: GET, PUT, DELETE, POST, etc...
 
 An API is called RESTfull when it follows a REST architecture:
-<http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm>
+[Example](http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)
 
 ### 2.5. Linking
 
@@ -163,25 +166,27 @@ Example:
 
 SOAP (Simple Object Access Protocol) é communication protcol between computers based upon XML messages.
 
-It exposes an application logical componentes as services.
-
-<https://www.tutorialspoint.com/soap/what_is_soap.htm>
+It exposes an application logical componentes as services. [What is Soap.](https://www.tutorialspoint.com/soap/what_is_soap.htm)
 
 ### 2.7. REST vs. SOAP
 
-While SOAP is a communication protocolo on its own, REST is more an architectural design over HTTP protcol. It's a common mistake to refer to REST as a protocol, even though it is not.
+<table>
+  <p align="center">
+    <img src="https://stoplight.io/api/v1/projects/cHJqOjY2NDEz/images/l7sFWDlDayg" alt="drawing" height="200" width="300" focus="false"/>
+  </p>
+</table>
 
+While SOAP is a communication protocolo on its own, REST is more an architectural design over HTTP protcol. It's a common mistake to refer to REST as a protocol, even though it is not.
 In recent years, REST has gained strength over SOAP and is currently the most used communication approach using web services.
 
-![SOAPvsREST.png](https://stoplight.io/api/v1/projects/cHJqOjY2NDEz/images/l7sFWDlDayg)
 
 The following links have more information on this subject:
 
-1. <https://stackify.com/soap-vs-rest/> 
-2. <https://msdn.microsoft.com/en-us/magazine/dd942839.aspx>
-3. <http://www.business2community.com/brandviews/upwork/soap-vs-rest-look-two-different-api-styles-01827446#4lHZPqtxERqeLZ52.97>
-4. <http://geeknizer.com/rest-vs-soap-using-http-choosing-the-right-webservice-protocol/>
-5. <https://dzone.com/articles/web-services-architecture>
+[Stackify](https://stackify.com/soap-vs-rest/)<br>
+[Microsoft](https://msdn.microsoft.com/en-us/magazine/dd942839.aspx)<br>
+[Business2community](http://www.business2community.com/brandviews/upwork/soap-vs-rest-look-two-different-api-styles-01827446#4lHZPqtxERqeLZ52.97)<br>
+[Geeknizer](http://geeknizer.com/rest-vs-soap-using-http-choosing-the-right-webservice-protocol/)<br>
+[Dzone](https://dzone.com/articles/web-services-architecture)<br>
 
 #### 2.7.1. Advantages of REST over SOAP
 
@@ -254,7 +259,7 @@ Allowed methods: GET, POST, PUT and DELETE.
 
 Example: 
 ```json
-Customer: {
+customer: {
   "completeName": "João Silva",
   "shortName": "João",
   "nationalities": [
@@ -272,7 +277,6 @@ Resources that allow simplifying the relationship with a core entity, reducing t
 The response of the interaction with this resource is the data sent in the operation plus the reference to its core resource. **Virtual entities do not have their own ID.** and must be very well considered before using them.
 
 Métodos permitidos: GET (List), POST e PUT.
-
 
 **Example**: A customer can have specific attributes when he is a self-employed person. However, internally, it is converted into a customer.
 
@@ -318,7 +322,6 @@ GET /Self-employed-customers:
   },
 }
 ```
-
 ##### 3.1.1.2 Procedural Resource
 
 Resources that aggregate other entities in addition to their own attributes. They serve to facilitate and take the responsibility away from consumers of  APIs in having to manipulate several resources manually to meet a specific business need, thus making the operation very *chatty*.
@@ -363,9 +366,9 @@ When defining the types of attributes, whenever possible, reference should be ma
 
 Example:
 
--   Country Code (alfa 3) : <https://www.iso.org/iso-3166-country-codes.html>
--   Dates (with or without timestamp): <https://www.iso.org/iso-8601-date-and-time-format.html>
--   Currency : <https://www.iso.org/iso-4217-currency-codes.html>
+- [Country Code - Alfa 3](https://www.iso.org/iso-3166-country-codes.html)<br>
+- [Dates - With or without timestamp](https://www.iso.org/iso-8601-date-and-time-format.html)<br>
+- [Currency](https://www.iso.org/iso-4217-currency-codes.html)<br>
 
 ### 3.3. Methods
 
@@ -414,7 +417,7 @@ As examples of common models we used, we have:
 | dateTime        | string                                                                                                  | date-time                                                                                                   | As defined by date-time - [RFC3339](http://xml2rfc.ietf.org/public/rfc/html/rfc3339.html#anchor14) |
 | password        | string                                                                                                  | password                                                                                                    | Used to hint UIs the input needs to be obscured.                                                   |
 
-<https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md>
+[OpenAPI Specification](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md)
 
 ## 4. Common Models
 
@@ -555,7 +558,7 @@ pageSize:
 
 Example of a client request filtered by name and pageNumber of 20 lines:
 
-**Example of GET**: //example.bancobpi.pt/customers-api/v1/customers?name=anna&pageSize=20
+**Example of GET**: //example.bancobpi.pt/customers-api/v1/customers?name=joao&pageSize=20
 
 In the request's _response body_, links to the next and previous pages are returned ( **prev** and **next** ) when applicable. In case it is the first page and there is a second one, only the link to the **next** is returned. In a case it is the last page, only the link to **prev** is returned.
 
@@ -636,9 +639,6 @@ definitions:
 ``` 
 > Note that the response code **HTTP 200** means that the result fits on a single page; if a **HTTP 206** code is returned, then it means the result is a partial content (in relation to the whole result), that is, there will be more pages to show. Even the last page will return **HTTP 206**. The way to see if we are on the last page is to check if there is the **next.** attribute in the response header.
 
-<!-- theme: success -->
-> All common types are available in this [link](https://bancobpi.stoplight.io/docs/commons-api-definitions/c2NoOjI1Nzg0Nzgy-link-pagination-body).
-
 ## 5. HTTP Status Codes
 
 HTTP Status codes that an API can return may by group by such:
@@ -674,14 +674,14 @@ SERVER ERROR
 
 ### 5.1. Error Block
 
-Representation of the error structure created for client and server errors:
-![Error Block.png](https://stoplight.io/api/v1/projects/cHJqOjY2NDEz/images/tRUWQlcQD1w)
+Each error type has its own error structure. It is made up of the general error block plus its specific one.
 
-For more details, see the definition of the error block (ErrorBlock.yaml) in the [projeto de definição dos tipos comuns dentro do stoplight](https://bancobpi.stoplight.io/studio/commons-api-definitions?). 
+Representation of the general error structure created for client and server errors:
+![Error Block.png](https://stoplight.io/api/v1/projects/cHJqOjEyMTg4Ng/images/XrAy9CKhGBE)
 
 > Note: This yaml, as well as the other common types of this project, can be directly referenced within API projects. This makes API design easier as it is no longer necessary to replicate every common model.
 
-###### Example:
+**Specific 400 error example:**
 ```json
 {
   "type": "https://api.bancobpi.pt/validation-error",
