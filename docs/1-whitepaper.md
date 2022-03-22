@@ -643,7 +643,7 @@ definitions:
 
 HTTP Status codes that an API can return may by group by such:
 
-SUCESS
+SUCCESS
 
 | **HTTP Code** | **Meaning**| Design | Platform | **VERBS** |
 | --------------- | ------------------------------------------------------------------------------------------ | --------- |------------|----------------- |
