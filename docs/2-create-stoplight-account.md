@@ -6,7 +6,7 @@ Go to [https://bancobpi.stoplight.io/](https://bancobpi.stoplight.io/)
 
 <table>
   <p align="center">
-    <img src="https://stoplight.io/api/v1/projects/cHJqOjY2NDEz/images/f9CH2yUHPVk" alt="drawing" focus="false"/>
+    <img src="https://stoplight.io/api/v1/projects/cHJqOjEyMTg4Ng/images/88iauyL7e8A" alt="stoplight-account" focus="false"/>
   </p>
 </table>
 
