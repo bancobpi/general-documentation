@@ -24,7 +24,7 @@ Go to [https://bancobpi.stoplight.io/](https://bancobpi.stoplight.io/)
 
 <table>
   <p align="center">
-    <img src="https://stoplight.io/api/v1/projects/cHJqOjEyMTg4Ng/images/ZEiCCwvhRSA" focus="false"/>
+    <img src="https://stoplight.io/api/v1/projects/cHJqOjEyMTg4Ng/images/ZEiCCwvhRSA" alt="connect-github-stoplight" focus="false"/>
   </p>
 </table>
 
