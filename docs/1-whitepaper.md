@@ -30,7 +30,7 @@ HTTP communication is based on the "Request-Response" concept. The client sends 
 
 <table>
   <p align="center">
-    <img src="https://stoplight.io/api/v1/projects/cHJqOjY2NDEz/images/Iueb71gQpD0" alt="drawing" height="200" width="300" focus="false"/>
+    <img src="https://stoplight.io/api/v1/projects/cHJqOjEyMTg4Ng/images/U2hUAkgxBvE" alt="whitepaper_chapter_2_1" height="200" width="300" focus="false"/>
   </p>
 </table>
 
@@ -71,7 +71,7 @@ The body will contain the data that the client wants to send to the server. Unli
 
 <table>
   <p align="center">
-    <img src="https://stoplight.io/api/v1/projects/cHJqOjY2NDEz/images/nVYee29xfoA" alt="drawing" height="200" width="300" focus="false"/>
+    <img src="https://stoplight.io/api/v1/projects/cHJqOjEyMTg4Ng/images/wWOoiQfQiVM" alt="whitepaper_chapter_2_2" height="200" width="300" focus="false"/>
   </p>
 </table>
 
@@ -85,7 +85,7 @@ State numeric code, with 3 digits with unique meaning. See [HTTP Status Code](#5
 
 <table>
   <p align="center">
-    <img src="https://stoplight.io/api/v1/projects/cHJqOjY2NDEz/images/vQVcWF2z7T8" alt="drawing" height="300" width="400" focus="false"/>
+    <img src="https://stoplight.io/api/v1/projects/cHJqOjEyMTg4Ng/images/obVBZHRCK7A" alt="whitepaper_chapter_2_3" height="300" width="400" focus="false"/>
   </p>
 </table>
 
@@ -172,7 +172,7 @@ It exposes an application logical componentes as services. [What is Soap.](https
 
 <table>
   <p align="center">
-    <img src="https://stoplight.io/api/v1/projects/cHJqOjY2NDEz/images/l7sFWDlDayg" alt="drawing" height="200" width="300" focus="false"/>
+    <img src="https://stoplight.io/api/v1/projects/cHJqOjEyMTg4Ng/images/rii7x0w0Kyc" alt="whitepaper_chapter_2_7" height="200" width="300" focus="false"/>
   </p>
 </table>
 
@@ -675,7 +675,7 @@ SERVER ERROR
 Each error type has its own error structure. It is made up of the general error block plus its specific one.
 
 Representation of the general error structure created for client and server errors:
-![Error Block.png](https://stoplight.io/api/v1/projects/cHJqOjEyMTg4Ng/images/XrAy9CKhGBE)
+![whitepaper_chapter_5_1.jpg](https://stoplight.io/api/v1/projects/cHJqOjEyMTg4Ng/images/dEEbP7d5Ogk)
 
 > Note: This yaml, as well as the other common types of this project, can be directly referenced within API projects. This makes API design easier as it is no longer necessary to replicate every common model.
 
