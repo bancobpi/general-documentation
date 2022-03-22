@@ -274,7 +274,7 @@ customer: {
 ##### 3.1.1.2 Virtual Resource
 
 Resources that allow simplifying the relationship with a core entity, reducing the information needed to use the API and/or simplifying business rules.
-The response of the interaction with this resource is the data sent in the operation plus the reference to its core resource. **Virtual entities do not have their own ID.** and must be very well considered before using them.
+The response of the interaction with this resource is the data sent in the operation plus the reference to its core resource. **Virtual resources do not have their own ID.** and must be very well considered before using them.
 
 Métodos permitidos: GET (List), POST e PUT.
 
@@ -643,9 +643,7 @@ definitions:
 
 HTTP Status codes that an API can return may by group by such:
 
-**TODO: Add the platform gateway codes, indicating clearly that it should be designed or not**
-
-SUCESSO
+SUCCESS
 
 | **HTTP Code** | **Meaning**| Design | Platform | **VERBS** |
 | --------------- | ------------------------------------------------------------------------------------------ | --------- |------------|----------------- |
