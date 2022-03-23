@@ -6,7 +6,7 @@ Go to [https://github.com/](https://github.com/)
 
 <table>
   <p align="center">
-    <img src="https://stoplight.io/api/v1/projects/cHJqOjEyMTg4Ng/images/TnVj48P45bE" alt="github-account" focus="false" onerror="this.src='../static/github.gif'"/>
+    <img src="../assets/images/github.gif" alt="github-account" focus="false"/>
   </p>
 </table>
 
