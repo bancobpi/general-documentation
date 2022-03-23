@@ -30,7 +30,7 @@ HTTP communication is based on the "Request-Response" concept. The client sends 
 
 <table>
   <p align="center">
-    <img src="https://stoplight.io/api/v1/projects/cHJqOjEyMTg4Ng/images/U2hUAkgxBvE" alt="whitepaper_chapter_2_1" height="200" width="300" focus="false" onerror="this.src='../static/whitepaper_chapter_2_1.jpg'"/>
+    <img src="../assets/images/whitepaper_chapter_2_1.jpg" alt="whitepaper_chapter_2_1" height="200" width="300" focus="false"/>
   </p>
 </table>
 
@@ -71,7 +71,7 @@ The body will contain the data that the client wants to send to the server. Unli
 
 <table>
   <p align="center">
-    <img src="https://stoplight.io/api/v1/projects/cHJqOjEyMTg4Ng/images/wWOoiQfQiVM" alt="whitepaper_chapter_2_2" height="200" width="300" focus="false" onerror="this.src='../static/whitepaper_chapter_2_2.jpg'"/>
+    <img src="../assets/images/whitepaper_chapter_2_2.jpg" alt="whitepaper_chapter_2_2" height="200" width="300" focus="false"/>
   </p>
 </table>
 
@@ -85,7 +85,7 @@ State numeric code, with 3 digits with unique meaning. See [HTTP Status Code](#5
 
 <table>
   <p align="center">
-    <img src="https://stoplight.io/api/v1/projects/cHJqOjEyMTg4Ng/images/obVBZHRCK7A" alt="whitepaper_chapter_2_3" height="300" width="400" focus="false" onerror="this.src='../static/whitepaper_chapter_2_3.jpg'"/>
+    <img src="../assets/images/whitepaper_chapter_2_3.jpg" alt="whitepaper_chapter_2_3" height="300" width="400" focus="false"/>
   </p>
 </table>
 
@@ -172,7 +172,7 @@ It exposes an application logical componentes as services. [What is Soap.](https
 
 <table>
   <p align="center">
-    <img src="https://stoplight.io/api/v1/projects/cHJqOjEyMTg4Ng/images/rii7x0w0Kyc" alt="whitepaper_chapter_2_7" height="200" width="300" focus="false" onerror="this.src='../static/whitepaper_chapter_2_7.jpg'"/>
+    <img src="../assets/images/whitepaper_chapter_2_7.jpg" alt="whitepaper_chapter_2_7" height="200" width="300" focus="false"/>
   </p>
 </table>
 
@@ -677,7 +677,7 @@ Each error type has its own error structure. It is made up of the general error 
 Representation of the general error structure created for client and server errors:
 <table>
   <p align="center">
-    <img src="https://stoplight.io/api/v1/projects/cHJqOjEyMTg4Ng/images/dEEbP7d5Ogk" alt="whitepaper_chapter_5_1" focus="false" onerror="this.src='../static/whitepaper_chapter_5_1.jpg'"/>
+    <img src="../assets/images/whitepaper_chapter_5_1.jpg" alt="whitepaper_chapter_5_1" focus="false"/>
   </p>
 </table>
 
