@@ -6,7 +6,7 @@ Go to [https://github.com/](https://github.com/)
 
 <table>
   <p align="center">
-    <img src="https://stoplight.io/api/v1/projects/cHJqOjEyMTg4Ng/images/TnVj48P45bE" alt="github-account" focus="false"/>
+    <img src="https://raw.github.com/bancobpi/general-documentation/master/static/github.gif" alt="github-account" focus="false"/>
   </p>
 </table>
 
@@ -24,7 +24,7 @@ Go to [https://bancobpi.stoplight.io/](https://bancobpi.stoplight.io/)
 
 <table>
   <p align="center">
-    <img src="https://stoplight.io/api/v1/projects/cHJqOjEyMTg4Ng/images/ZEiCCwvhRSA" alt="connect-github-stoplight" focus="false"/>
+    <img src="https://raw.github.com/bancobpi/general-documentation/master/static/connect_stoplight_github.gif" alt="connect-github-stoplight" focus="false"/>
   </p>
 </table>
 
