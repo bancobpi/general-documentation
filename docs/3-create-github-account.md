@@ -24,9 +24,11 @@ Go to [https://bancobpi.stoplight.io/](https://bancobpi.stoplight.io/)
 
 <table>
   <p align="center">
-    <img src="../static/connect_stoplight_github.gif" alt="connect-github-stoplight" focus="false" onerror="this.src"'https://stoplight.io/api/v1/projects/cHJqOjEyMTg4Ng/images/ZEiCCwvhRSA'"/>
+    <img src="https://stoplight.io/api/v1/projects/cHJqOjEyMTg4Ng/images/ZEiCCwvhRSA" alt="connect-github-stoplight" focus="false" onerror="this.src='../static/connect_stoplight_github.gif'"/>
   </p>
 </table>
+
+
 
 Now you have the GitHub account created and synced with StopLight.
 
