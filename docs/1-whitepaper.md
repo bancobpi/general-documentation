@@ -639,6 +639,66 @@ definitions:
 ``` 
 > Note that the response code **HTTP 200** means that the result fits on a single page; if a **HTTP 206** code is returned, then it means the result is a partial content (in relation to the whole result), that is, there will be more pages to show. Even the last page will return **HTTP 206**. The way to see if we are on the last page is to check if there is the **next.** attribute in the response header.
 
+### 4.4 Audit
+
+It is a block of attributes* created to standardize the need for auditing in some entities/apis.
+
+***Attributes**: createdBy, createdData, alteredBy and alteredDate.
+
+As these attributes have an audit-only effect, they are all read-only. This means it will only be returned in the RESPONSE of operations.
+
+[Audit Block](https://bancobpi.stoplight.io/docs/commons-api-definitions/75b252c1c86b4-audit)
+
+If your API needs to include the attributes listed above, it is recommended that the audit block be implemented.
+Below are two examples, one without and the other with the audit block to make it clearer.
+
+Example:
+
+/products/123
+
+**Response without AUDIT:**
+
+```json
+{
+  "id": "10499532-8ae3-4f61-a97e-a9583d8dc2e4",
+  "kind": "api-name.bancobpi.pt/v1/resource-name",
+  "name": "Laptop",
+  "amount": 999,
+  "_links": {
+    "self": {
+      "href": "https://examplehost/exampleapi/v1/example-resource/1"
+    }
+  }
+}
+```
+
+/products/123
+
+**Response with AUDIT:**
+```json
+{
+  "id": "10499532-8ae3-4f61-a97e-a9583d8dc2e4",
+  "kind": "api-name.bancobpi.pt/v1/resource-name",
+  "name": "Laptop",
+  "amount": 999,
+  "_links": {
+    "self": {
+      "href": "https://examplehost/exampleapi/v1/example-resource/1"
+    }
+  },
+  "createdBy": "657891",
+  "createdDate": "2022-08-24T14:15:22Z",
+  "alteredBy": "657891",
+  "alteredDate": "2022-08-24T14:15:22Z"
+}
+``` 
+
+Inside your entity, add one more object to your allOf and make reference to `Design Library/Audit`.
+
+Example:
+
+![audit.png](https://stoplight.io/api/v1/projects/cHJqOjY2NDEz/images/ANMW69wl6lk)
+
 ## 5. HTTP Status Codes
 
 HTTP Status codes that an API can return may by group by such:
