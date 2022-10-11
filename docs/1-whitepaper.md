@@ -769,15 +769,17 @@ Representation of the general error structure created for client and server erro
 
 O Status de alteração fornece um meio de acompanhar quais recursos foram alterados. Se um recurso tiver várias alterações, dependendo da requisição pode retornar somente a alteração mais recente ou mesmo a lista de alterações.
 
-## APIs Sincronas
+### APIs Sincronas
 
-### Entidades
-
-Para podermos gerenciar o status de um recurso. Lembrando que os estados que forem suportados por get,post,put e delete devem usar os mesmo. A ideia de usarmos o status seria apenas para estados "transitórios". 
+Criamos a entidade status para podermos gerenciar o status de um recurso. Lembrando que os estados que forem suportados por get,post,put e delete devem usar os mesmo. A ideia de usarmos o status seria apenas para estados "transitórios". 
 
 OBS.: Por default se não for enviado o pageSize, será assumido o valor default de 1 e dessa forma ira retornar somente status atual do recurso. Caso queiram ver o histórico de alteração do status de um recurso, basta passarem essa variavel e com valor diferente de 1.
 
 Example:
+
+**Entidade**
+
+![status.png](https://stoplight.io/api/v1/projects/cHJqOjEyMTg4Ng/images/Pt3jIsT3344)
 
 **GET /customers/123/status** - Consultar o estado atual
 
