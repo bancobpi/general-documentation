@@ -764,3 +764,93 @@ Representation of the general error structure created for client and server erro
   }
 }
 ```
+
+## 6. Status
+
+O Status de alteração fornece um meio de acompanhar quais recursos foram alterados. Se um recurso tiver várias alterações, dependendo da requisição pode retornar somente a alteração mais recente ou mesmo a lista de alterações.
+
+## APIs Sincronas
+
+### Entidades
+
+Para podermos gerenciar o status de um recurso. Lembrando que os estados que forem suportados por get,post,put e delete devem usar os mesmo. A ideia de usarmos o status seria apenas para estados "transitórios". 
+
+OBS.: Por default se não for enviado o pageSize, será assumido o valor default de 1 e dessa forma ira retornar somente status atual do recurso. Caso queiram ver o histórico de alteração do status de um recurso, basta passarem essa variavel e com valor diferente de 1.
+
+Example:
+
+**GET /customers/123/status** - Consultar o estado atual
+
+```json
+{
+  "status": [
+    {
+      "id": "10499532-8ae3-4f61-a97e-a9583d8dc2e4",
+      "kind": "api-name.bancobpi.pt/v1/resource-name",
+      "status": "active",
+      "createdBy": "657891",
+      "createdDate": "2022-08-24T14:15:22Z",
+      "alteredBy": "657891",
+      "alteredDate": "2022-08-24T14:15:22Z"
+    }
+  ]
+}
+````
+
+**POST /customers/123/status** - Alterar o estado
+
+Input:
+```json
+{
+  "status": "suspended"
+}
+````
+
+Output:
+```json
+{
+  "id": "10499532-8ae3-4f61-a97e-b9683d9dd5g2",
+  "kind": "api-name.bancobpi.pt/v1/resource-name",
+  "status": "suspended",
+  "createdBy": "657891",
+  "createdDate": "2022-08-26T10:37:01Z",
+  "alteredBy": "657891",
+  "alteredDate": "2022-08-26T10:37:01Z"
+}
+````
+
+**GET /customers/123/status?pageSize=5** - Consultar histórico de alteração de estados, indicando um pageSize maior que 1
+
+
+```json
+{
+  "status": [
+    {
+      "id": "10499532-8ae3-4f61-a97e-a9583d8dc2e4",
+      "kind": "api-name.bancobpi.pt/v1/resource-name",
+      "status": "active",
+      "createdBy": "657891",
+      "createdDate": "2022-08-24T14:15:22Z",
+      "alteredBy": "657891",
+      "alteredDate": "2022-08-24T14:15:22Z"
+    },
+    {
+      "id": "10499532-8ae3-4f61-a97e-b9683d9dd5g2",
+      "kind": "api-name.bancobpi.pt/v1/resource-name",
+      "status": "suspended",
+      "createdBy": "657891",
+      "createdDate": "2022-08-26T10:37:01Z",
+      "alteredBy": "657891",
+      "alteredDate": "2022-08-26T10:37:01Z"
+    }
+  ],
+  "totalItems": 2,
+  "currentPage": 1,
+  "totalPages": 1,
+  "_links": {
+    "self": {
+      "href": "https://examplehost/exampleapi/v1/example-resource/1"
+    }
+  }
+}
+````
