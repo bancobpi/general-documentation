@@ -767,21 +767,21 @@ Representation of the general error structure created for client and server erro
 
 ## 6. Status
 
-A entidade **status** fornece um meio de acompanhar os status de um recurso. Se o mesmo tiver várias alterações, dependendo da requisição pode retornar somente a alteração mais recente ou mesmo a lista de alterações.
+The **status** entity provides a means of tracking the status of a resource. If it has several changes, depending on the request, it can return only the most recent change or even the list of changes.
 
 ### APIs Sincronas
 
-Os estados que forem suportados por get,post,put e delete devem usar os mesmos. A ideia de usarmos o status seria apenas para estados "transitórios". 
+The states that are supported by get,post,put and delete must use the same. The idea of using status would only be for "transient" states.
 
-OBS: Por default se não for enviado o pageSize, será assumido o valor default de 1 e dessa forma ira retornar somente status atual do recurso. Caso queiram ver o histórico de alteração do status de um recurso, basta passarem essa variavel e com valor diferente de 1.
+OBS: By default, if the pageSize is not sent, the default value of 1 will be assumed and in this way it will only return the current status of the resource. If you want to see the history of changing the status of a resource, just pass this variable and with a value other than 1.
 
 Example:
 
-**Entidade**
+**Entity**
 
 ![status.png](https://stoplight.io/api/v1/projects/cHJqOjEyMTg4Ng/images/Pt3jIsT3344)
 
-**GET /customers/123/status** - Consultar o estado atual
+**GET /customers/123/status** - Check current status
 
 ```json
 {
@@ -799,7 +799,7 @@ Example:
 }
 ````
 
-**POST /customers/123/status** - Alterar o estado
+**POST /customers/123/status** - Change status
 
 Input:
 ```json
@@ -821,7 +821,7 @@ Output:
 }
 ````
 
-**GET /customers/123/status?pageSize=5** - Consultar histórico de alteração de estados, indicando um pageSize maior que 1
+**GET /customers/123/status?pageSize=5** - Check state change history, indicating a pageSize greater than 1
 
 
 ```json
