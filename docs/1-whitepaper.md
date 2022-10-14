@@ -777,10 +777,6 @@ OBS: By default, if the pageSize is not sent, the default value of 1 will be ass
 
 Example:
 
-**Entity**
-
-![status.png](https://stoplight.io/api/v1/projects/cHJqOjEyMTg4Ng/images/Pt3jIsT3344)
-
 **GET /customers/123/status** - Check current status
 
 ```json
