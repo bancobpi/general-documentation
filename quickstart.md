@@ -18,8 +18,36 @@ To be able to view documents and projects, it is necessary to create a Stoplight
 To be able to build APIs, it is necessary to create a GitHub account</a>
 </table>
 
-<!-- theme: info -->
-> If you can't find what you're looking for or have any questions, please contact the Design Authority team dsi-designauthority@gbpi.loc.
----
-<!-- focus: false -->
-![Banco BPI](https://img.shields.io/badge/2022-Banco%20BPI%20%C2%A9-orange)
+
+
+````json
+BODY
+{
+  "taxIdentificationNumber": "123555999",
+  "externalReference": "50138fbd-33a8-4b5e-b93f-91bd51681793",
+  "fullName": "Bruno Rodrigues Gil",
+}
+````
+
+
+
+```json
+HTTP 200 OK
+
+{
+  "id": "973",
+  "kind": "api-name.bancobpi.pt/v1/resource-name",
+  "externalReference": "50138fbd-33a8-4b5e-b93f-91bd51681793",
+  "taxIdentificationNumber": "123555999",
+  "status": "active",
+  "fullName": "Bruno Rodrigues Gil",
+  "mec": "516611",
+  "email": "email@bpi.pt",
+  "displayName": "Laura Tiara",
+  "_links": {
+    "self": {
+      "href": "https://examplehost/exampleapi/v1/example-resource/1"
+    }
+  }
+}
+```

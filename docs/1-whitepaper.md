@@ -852,3 +852,13 @@ Output:
   }
 }
 ````
+
+## 7. Async
+
+In most cases, APIs for a client application are designed to respond quickly, on the order of 100 ms or less, many factors can affect the response latency.
+
+In some scenarios, however, the work done by backend may be long-running, on the order of seconds, or might be a background process that is executed in minutes or even hours. In that case, it isn't feasible to wait for the work to complete before responding to the request. This situation is a potential problem for any synchronous request-reply pattern.
+
+One solution to this problem is to use HTTP polling. Polling is useful to client-side code,as it can be hard to provide call-back endpoints or use long running connections. Even when callbacks are possible, the extra libraries and services that are required can sometimes add too much extra complexity.
+
+
