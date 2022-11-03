@@ -861,7 +861,7 @@ In some scenarios, however, the work done by backend may be long-running, on the
 
 One solution to this problem is to use HTTP polling. Polling is useful to client-side code,as it can be hard to provide call-back endpoints or use long running connections. Even when callbacks are possible, the extra libraries and services that are required can sometimes add too much extra complexity.
 
-Below is a drawing showing how we should think about Async. Let's use the resource employee accounts as an example.
+Below is a drawing showing how we should think about Async. Let's use the resource employee accounts as an example..
 
 
 
