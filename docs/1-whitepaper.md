@@ -861,8 +861,88 @@ In some scenarios, however, the work done by backend may be long-running, on the
 
 One solution to this problem is to use HTTP polling. Polling is useful to client-side code,as it can be hard to provide call-back endpoints or use long running connections. Even when callbacks are possible, the extra libraries and services that are required can sometimes add too much extra complexity.
 
-Below is a drawing showing how we should think about Async. Let's use the resource employee accounts as an example..
+Below is a drawing showing how we should think about Async. Let's use the resource employee accounts as an example.
 
+<table>
+  <p align="center">
+    <img src="https://raw.github.com/bancobpi/general-documentation/master/static/async.jpg" alt="async" height="600" width="700" focus="false"/>
+  </p>
+</table>
 
+1 - POST - /async/employee-accounts
+
+Response HTTP 202
+
+```json
+{
+  "id": "10499532",
+  "kind": "api-name.bancobpi.pt/v1/resource-name",
+  "status": "waiting",
+  "_links": {
+    "request": {
+      "href": "https://examplehost/exampleapi/v1/example-resource/1"
+    }
+  }
+}
+````
+
+2 - GET - /async/employee-accounts/{id}
+
+Response HTTP 200
+
+```json
+{
+  "id": "10499532",
+  "kind": "api-name.bancobpi.pt/v1/resource-name",
+  "status": "processing",
+  "_links": {
+    "request": {
+      "href": "https://examplehost/exampleapi/v1/example-resource/1"
+    }
+  }
+}
+````
+
+3 - GET - /async/employee-accounts/{id}
+
+Response HTTP 302
+
+```json
+{
+  "id": "10499532",
+  "kind": "api-name.bancobpi.pt/v1/resource-name",
+  "status": "done",
+  "_links": {
+    "request": {
+      "href": "https://examplehost/exampleapi/v1/example-resource/4f61"
+    }
+  }
+}
+````
+
+4 - GET - /employee-accounts/{id}
+
+Response HTTP 200
+
+```json
+{
+  "id": "4f61",
+  "kind": "api-name.bancobpi.pt/v1/resource-name",
+  "externalReference": "50138fbd-33a8-4b5e-b93f-91bd51681793",
+  "taxIdentificationNumber": "123555999",
+  "status": "active",
+  "fullName": "Bruno Rodrigues Gil",
+  "mec": "516611",
+  "email": "email@bpi.pt",
+  "displayName": "Laura Tiara",
+  "bondType": "retired",
+  "kindType": "internal",
+  "_links": {
+    "self": {
+      "href": "https://examplehost/exampleapi/v1/example-resource/4f61"
+    }
+  }
+}
+````
 
 
