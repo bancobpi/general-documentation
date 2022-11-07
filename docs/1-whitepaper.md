@@ -927,7 +927,7 @@ Response HTTP 200
 ```json
 {
   "id": "4f61",
-  "kind": "api-name.bancobpi.pt/v1/resource-name",
+  "kind": "employee-accounts.bancobpi.pt/v1/employee-accounts",
   "externalReference": "50138fbd-33a8-4b5e-b93f-91bd51681793",
   "taxIdentificationNumber": "123555999",
   "status": "active",
