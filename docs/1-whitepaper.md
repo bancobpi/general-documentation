@@ -865,7 +865,7 @@ Below is a drawing showing how we should think about Async. Let's use the resour
 
 <table>
   <p align="center">
-    <img src="https://raw.github.com/bancobpi/general-documentation/master/static/asyn.jpg" alt="Async" height="600" width="700" focus="false"/>
+    <img src="https://raw.github.com/bancobpi/general-documentation/master/static/async.jpg" alt="Async" height="600" width="700" focus="false"/>
   </p>
 </table>
 
