@@ -876,11 +876,11 @@ Response HTTP 202
 ```json
 {
   "id": "10499532",
-  "kind": "api-name.bancobpi.pt/v1/resource-name",
+  "kind": "employee-accounts.bancobpi.pt/v1/async/employee-accounts",
   "status": "waiting",
   "_links": {
     "request": {
-      "href": "https://examplehost/exampleapi/v1/example-resource/1"
+      "href": "https://employee-accounts.bancobpi.pt/v1/async/employee-accounts/1"
     }
   }
 }
@@ -893,11 +893,11 @@ Response HTTP 200
 ```json
 {
   "id": "10499532",
-  "kind": "api-name.bancobpi.pt/v1/resource-name",
+  "kind": "employee-accounts.bancobpi.pt/v1/async/employee-accounts",
   "status": "processing",
   "_links": {
     "request": {
-      "href": "https://examplehost/exampleapi/v1/example-resource/1"
+      "href": "https://employee-accounts.bancobpi.pt/v1/async/employee-accounts/1"
     }
   }
 }
@@ -910,11 +910,11 @@ Response HTTP 302
 ```json
 {
   "id": "10499532",
-  "kind": "api-name.bancobpi.pt/v1/resource-name",
+  "kind": "employee-accounts.bancobpi.pt/v1/async/employee-accounts",
   "status": "done",
   "_links": {
     "request": {
-      "href": "https://examplehost/exampleapi/v1/example-resource/4f61"
+      "href": "https://employee-accounts.bancobpi.pt/v1/employee-accounts/4f61"
     }
   }
 }
@@ -931,15 +931,15 @@ Response HTTP 200
   "externalReference": "50138fbd-33a8-4b5e-b93f-91bd51681793",
   "taxIdentificationNumber": "123555999",
   "status": "active",
-  "fullName": "Bruno Rodrigues Gil",
+  "fullName": "João Silva",
   "mec": "516611",
   "email": "email@bpi.pt",
-  "displayName": "Laura Tiara",
+  "displayName": "João Silva",
   "bondType": "retired",
   "kindType": "internal",
   "_links": {
     "self": {
-      "href": "https://examplehost/exampleapi/v1/example-resource/4f61"
+      "href": "https://employee-accounts.bancobpi.pt/v1/employee-accounts/4f61"
     }
   }
 }
