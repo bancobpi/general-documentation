@@ -876,11 +876,11 @@ Response HTTP 202
 ```json
 {
   "id": "10499532",
-  "kind": "employee-accounts.bancobpi.pt/v1/async/employee-accounts",
+  "kind": "api.bancobpi.pt/employee-accounts/v1/async/employee-accounts",
   "status": "waiting",
   "_links": {
     "request": {
-      "href": "https://employee-accounts.bancobpi.pt/v1/async/employee-accounts/1"
+      "href": "https://api.bancobpi.pt/employee-accounts/v1/async/employee-accounts/1"
     }
   }
 }
@@ -893,11 +893,11 @@ Response HTTP 200
 ```json
 {
   "id": "10499532",
-  "kind": "employee-accounts.bancobpi.pt/v1/async/employee-accounts",
+  "kind": "api.bancobpi.pt/employee-accounts/v1/async/employee-accounts",
   "status": "processing",
   "_links": {
     "request": {
-      "href": "https://employee-accounts.bancobpi.pt/v1/async/employee-accounts/1"
+      "href": "https://api.bancobpi.pt/employee-accounts/v1/async/employee-accounts/1"
     }
   }
 }
@@ -910,11 +910,11 @@ Response HTTP 302
 ```json
 {
   "id": "10499532",
-  "kind": "employee-accounts.bancobpi.pt/v1/async/employee-accounts",
+  "kind": "api.bancobpi.pt/employee-accounts/v1/async/employee-accounts",
   "status": "done",
   "_links": {
     "request": {
-      "href": "https://employee-accounts.bancobpi.pt/v1/employee-accounts/4f61"
+      "href": "https://api.bancobpi.pt/employee-accounts/v1/employee-accounts/4f61"
     }
   }
 }
@@ -927,7 +927,7 @@ Response HTTP 200
 ```json
 {
   "id": "4f61",
-  "kind": "employee-accounts.bancobpi.pt/v1/employee-accounts",
+  "kind": "api.bancobpi.pt/employee-accounts/v1/employee-accounts",
   "externalReference": "50138fbd-33a8-4b5e-b93f-91bd51681793",
   "taxIdentificationNumber": "123555999",
   "status": "active",
@@ -939,7 +939,7 @@ Response HTTP 200
   "kindType": "internal",
   "_links": {
     "self": {
-      "href": "https://employee-accounts.bancobpi.pt/v1/employee-accounts/4f61"
+      "href": "https://api.bancobpi.pt/employee-accounts/v1/employee-accounts/4f61"
     }
   }
 }
