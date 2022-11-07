@@ -863,11 +863,7 @@ One solution to this problem is to use HTTP polling. Polling is useful to client
 
 Below is a drawing showing how we should think about Async. Let's use the resource employee accounts as an example.
 
-<table>
-  <p align="center">
-    <img src="https://raw.github.com/bancobpi/general-documentation/master/static/async.jpg" alt="async" height="600" width="700" focus="false"/>
-  </p>
-</table>
+
 
 1 - POST - /async/employee-accounts
 
