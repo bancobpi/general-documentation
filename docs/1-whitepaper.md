@@ -933,7 +933,7 @@ Response HTTP 200
   "status": "active",
   "fullName": "João Silva",
   "mec": "516611",
-  "email": "email@bpi.pt",
+  "email": "joao.silva@bpi.pt",
   "displayName": "João Silva",
   "bondType": "retired",
   "kindType": "internal",
