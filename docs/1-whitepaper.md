@@ -895,11 +895,6 @@ Response HTTP 200
   "id": "10499532",
   "kind": "api.bancobpi.pt/employee-accounts/v1/async/employee-accounts",
   "status": "processing",
-  "_links": {
-    "request": {
-      "href": "https://api.bancobpi.pt/employee-accounts/v1/async/employee-accounts/1"
-    }
-  }
 }
 ````
 
@@ -912,8 +907,9 @@ Response HTTP 302
   "id": "10499532",
   "kind": "api.bancobpi.pt/employee-accounts/v1/async/employee-accounts",
   "status": "done",
+  "resourceId": "4f61",
   "_links": {
-    "request": {
+    "resource": {
       "href": "https://api.bancobpi.pt/employee-accounts/v1/employee-accounts/4f61"
     }
   }
