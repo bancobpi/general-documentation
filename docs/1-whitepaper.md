@@ -218,6 +218,8 @@ When starting an API implementation, the most important is the design phase - **
 
 At this stage it is crucial to define exactly what will be the **resources** of our API, the methods or operations that we will implement (GET, POST, etc.), the URLs to implement, etc.
 
+To create an API that is easy to understand, flexible, and reusable, it's important to use a resource-oriented design approach. This approach organizes the API around meaningful concepts called resources. By doing so, developers can easily understand how the API works, make changes to it without breaking other parts of the system, and reuse components of the API in other parts of the system or even in other systems
+
 APIs must be thought of as **products**, which provide relevant information to be used by **external and / or internal** applications to the Bank.
 
 We **MUST** consider all API clients as external programmers, who at first do not know the logic and functioning of the business in BPI; as such, the information to be made available must be as abstract as possible, and not specific to a particular business / direction / application - that is, it must be thought of **from the inside out**. It can't be thought of a design to support only one very specific business case.
@@ -233,19 +235,14 @@ Basically, it corresponds to a **relevant entity for the business**, which can b
 An entity, as a **resource**, should not be confused with physical application entities, e.g. tables.
 A resource can represent multiple data entities, as in _Contacts_ and _Accounts_.
 
-Some examples of resources:
--   Customers 
--   Contacts - customers contacts (e.g. phone, fax, email) 
--   Addresses - customers physical addresses
--   Identifications - Identification Documents (e.g. passport)
--   Supporting-documents - e.g. Proof of residence
--   Checking-accounts
--   Transactions
-
 Resource design must follow these rules:
-- Use names, not verbs
-- Always in plural
-- spinal-case (supporting-documents, not SupportingDocuments)
+- **Use of nouns**: When defining on a name for a resource, a noun should be selected instead of a verb, as a resource is meant to be an item and not an action.
+- **Always in plural**: The resource should be defined using plural nouns, not singular nouns. The rationale behind this is the fact that as nouns, resources have attributes associated to them.
+- **Use of kebab-case**: In resources that have names with more than one word, it should be used a kebab case approach where each word or abbreviation in the middle of the phrase is separated by a hyphen. This format is used to improve readability of the resource name (supporting-documents, not SupportingDocuments).
+- **Use of lowercase letters**: Lowercase letters should always be preferred as URIs are case-sensitive when dealing with resources, so mixing uppercase and lowercase can induce in errors.
+
+Examples:
+![resource examples.png](<../assets/images/resource examples.png>)
 
 #### 3.1.1 Resource Types
 
@@ -356,35 +353,61 @@ Allowed methods: GET, POST and DELETE.
 Each resource is composed of a series of attributes, i.e., fields that identify it and that can be manipulated.
 
 Defining the attributes must take into account the following aspects:
-- Name of attributes in camelCase
-- Description of attributes (meaning)
-- **All** data restrictions must be present (e.g. max length, wildcard, enumerator, required, etc)
+- **Descriptive and consistent names**: Use descriptive and consistent names for attributes, to make it easier for developers to understand their purpose. Avoid using abbreviations and acronyms that may be unfamiliar to users.
+- **Appropriate data types**: Use appropriate data types for attributes, such as strings, numbers, enumerations, or, if possible, a canonical type. This ensures that the data is consistent and can be properly validated.
+- **Use of camelCase**: Use a consistent casing for attributes, such as camelCase, by combining words and capitalizing all words following the first word and removing the space.
+- **Documentation**: Attributes documentation/description is extremely important for the developer who will use our APIs, to understand how they should be filled. By including information on their data type, format, validation rules, and any other relevant information, a meaning is added to the attribute, which is very helpful. Examples should also be used, with real anonymous scenarios, to make the API as consistent as possible.
+- **Standard formats**: When defining the types of attributes, whenever possible, reference should be made to the corresponding **ISO** standard. Example:
 
-**Attributes documentation/description** is extremely important for the developer who will use our APIs to understand how they should be filled and understood.
-
-When defining the types of attributes, whenever possible, reference should be made to the corresponding **ISO** standard.
-
-Example:
-
-- [Country Code - Alfa 3](https://www.iso.org/iso-3166-country-codes.html)<br>
-- [Dates - With or without timestamp](https://www.iso.org/iso-8601-date-and-time-format.html)<br>
-- [Currency](https://www.iso.org/iso-4217-currency-codes.html)<br>
+  - [Country Code - Alfa 3](https://www.iso.org/iso-3166-country-codes.html)<br>
+  - [Dates - With or without timestamp](https://www.iso.org/iso-8601-date-and-time-format.html)<br>
+  - [Currency](https://www.iso.org/iso-4217-currency-codes.html)<br>
 
 ### 3.3. Methods
 
 It's important to take into account the added value and usability of the operations to be implemented for our customers, and translate them to simple and intuitive endpoints.
 
+This translation can be done by using appropriate HTTP methods for each action on a resource. For example, use GET to retrieve a resource, POST to create a new resource, PUT to update an existing resource, and DELETE to delete a resource.
+
 It is not mandatory to implement all HTTP verbs, on the contrary, its implementation must be adapted to functional needs.
 
-For example:
+Used verbs tend to be applied to a corresponding CRUD operation. You can view this mapping on the following table:
 
-- POST /customers: Creating a customer
-- PUT /customers/{customerId} : Changing a customer
-- DELETE /customers/{customerId} : We can choose not to implement since customers are not deleted. However, we can consider the DELETE operation to be a logical one, no necesserary corrsponding to a deletion in the database, but a change of state. This must be clear in the documentation
 
-It is extremely important to **document all returned operations and errors**, explaining what they do and what messages they return (success/failure) and giving examples. Only then the programmer (internal/external) who will develop applications using our APIs understands how to use them, without having to ask for help from those who implemented it.
+HTTP VERB | CRUD
+----------|----------
+ GET | Retrieve
+ POST | Create 
+ PUT | Update
+ DELETE | Delete
 
-Providing examples of each method invocation, we can get an instant mock service with stoplight, so we can start trying our own API while still designing it.
+
+Please consult the following table for a list of examples on how to correctly use HTTP Verbs to map to certain API operations:
+
+
+VERB | URI | ACTION | NOTES
+-----|-----|--------|---------
+ POST | /customers | Creates a customer | Information about the new customer is sent on the request body, usually as a JSON content
+ PUT | /customers/{id} | Updates a customer with the sent values
+ GET | /customers | Returns a list of customers
+ GET | /customers/{id} | Returns the customer with id equal to {id}
+ GET | /customers?name=miguel | Returns a list of customers with name equal to “Miguel”
+ GET | /customers/{id}/contacts | Returns the contacts of the customer with id equal to {id}
+ DELETE | /customer/{id} | Deletes the customer with id equal to {id} | We can choose not to implement since customers are not deleted. However, we can consider the DELETE operation to be a logical one, not necessarily corresponding to a deletion in the database, but a change of state. This must be clear in the documentation
+
+
+The process of choosing the relevant methods and translating them into endpoints should follow some aspects:
+- **Self-explanatory**: An HTTP method is always a verb and, when paired with the resource noun, the outcome of the endpoint must be clear, even without access to the associated documentation.
+- **Hierarchy**: To indicate a hierarchical relationship between resources (composition or aggregation) a forward slash (/) should be used. Consequently, there is a clear hierarchical distinction between the various resources present in the URI. For example, http://api.example.com/customers/{id}/addresses shows the resource "customers" contains another resource named "addresses".
+- [**Use standard HTTP status codes**](https://bancobpi.stoplight.io/docs/general-documentation/aeedc62427efc-whitepaper#5-http-status-codes): Use standard HTTP status codes to indicate the success or failure of a request. For example, use 200 OK to indicate success, 400 Bad Request to indicate a client-side error, and 500 Internal Server Error to indicate a server-side error.
+- **Documentation**: It is extremely important to document the methods thoroughly. Include information on their purpose, parameters, request and response formats (success/failure). Only then the programmer (internal/external) who will develop applications using our APIs understands how to use them, without having to ask for help from those who implemented it.
+- **Consistent request and response formats**: Use consistent request and response formats, to ensure consistency across your API.
+- **Provide examples**: By providing examples for each method invocation, we can get an instant mock service with Stoplight, allowing testing our own API while designing it.
+- **Use of query parameters**: When there is a need to filter through a collection that is called by a resource, a query parameter should be used instead of specifying the filter condition with another resource. To filter resources, a question mark “?” should be used.
+  - **Key-value pair**: Each parameter is specified as a key-value pair, separated by an equal sign “=”, and multiple parameters are separated by an ampersand “&”: 
+    **https://api.example.com/resource?param1=value1&param2=value2**
+  - **Comma-separated values**: You can use a comma-separated list of values within a single query parameter. For example, **param=1,2,3** indicates that the parameter "param" has multiple values: 1, 2, and 3.
+  - **Interval notation**: For representing intervals, you can use specific notation within the query parameter value. For example, **param=1-10** denotes a range from 1 to 10.
 
 ### 3.4. Common Models
 
@@ -765,11 +788,23 @@ Representation of the general error structure created for client and server erro
 }
 ```
 
-## 6. Status
+## 6. Versioning
+
+An API should be designed considering its use on the long-term, but since change is inevitable, the API will never be completely stable per say. API change management can be addressed by a versioning strategy that should include:
+- A schedule for discontinuing old versions of the API;
+- Up-to-date documentation describing the technical changes per version;
+- Detailed explanation of why the changes are needed from a business perspective.
+In the current context, the main goal of the versioning strategy is to allow changes on a resource or on the API definition in an independent way, without necessarily changing the version of both.
+
+![image.png](../assets/images/image.png)
+
+This is achieved by defining a specific version for the resources and other for the APIs, which means that the project version of the API could be different than these two and is represented by the branch name.
+
+## 7. Status
 
 The **status** entity provides a means of tracking the status of a resource. If it has several changes, depending on the request, it can return only the most recent change or even the list of changes.
 
-### APIs Sincronas
+### Synchronous APIs
 
 The states that are supported by get,post,put and delete must use the same. The idea of using status would only be for "transient" states.
 
@@ -852,3 +887,13 @@ Output:
   }
 }
 ````
+
+### Asynchronous APIs
+
+For some business cases, there might the be need to develop APIs that perform long-running tasks. To avoid blocking the execution flow, these APIs should be designed considering the “async-first” principle, that emphasizes prioritizing and designing APIs with asynchronous behavior in mind to support non-blocking operations.
+
+The APIs that follow this pattern should contain the word “async” in the path, and the following steps should be taken into consideration:
+1. The client application makes a synchronous call to an API, triggering a long-running operation on the backend – the API responds synchronously, as quickly as possible, with a HTTP 202 (Accepted) status code, acknowledging that the request has been received for processing.
+2. The body of the response holds a location reference pointing to an endpoint that the client can pool to check for the result of the long running operation (status endpoint).
+3. For every successful call to the status endpoint, it returns HTTP 202. While the work is still pending, the status endpoint returns a resource that indicates the work is still in progress.
+4. Once the work is complete, the status endpoint can either return a resource that indicates completion or redirect to another resource URL.
