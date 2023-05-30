@@ -420,7 +420,8 @@ As examples of common models we used, we have:
 -   [Common body](#41-common-body)
 -   [Self link body](#42-self-link-body)
 -   [Pagination](#43-pagination)
--   [HTTP status code](#5-http-status-codes)
+-   [Audit](#44-audit)
+-   [Error block](#51-error-block)
 
 ### 3.5. Data type/format
 
@@ -493,7 +494,7 @@ type: object
 ``` 
 
 ### 4.2. Self Link Body
-The _self link body_ is intended to be an reference to itself, based on pattern [Hypertext Application Language (HAL)](https://tools.ietf.org/id/draft-kelly-json-hal-01.html).
+The _self link body_ is intended to be an reference to itself, based on pattern [Hypertext Application Language (HAL)](https://datatracker.ietf.org/doc/draft-kelly-json-hal/).
 
 Description of fields:
 1. **\_links / self**: URL to the resource itself; for example, in lists each line has a URL with a link to the line detail.
