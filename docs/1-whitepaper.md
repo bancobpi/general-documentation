@@ -240,6 +240,7 @@ Resource design must follow these rules:
 - **Always in plural**: The resource should be defined using plural nouns, not singular nouns. The rationale behind this is the fact that as nouns, resources have attributes associated to them.
 - **Use of kebab-case**: In resources that have names with more than one word, it should be used a kebab case approach where each word or abbreviation in the middle of the phrase is separated by a hyphen. This format is used to improve readability of the resource name (supporting-documents, not SupportingDocuments).
 - **Use of lowercase letters**: Lowercase letters should always be preferred as URIs are case-sensitive when dealing with resources, so mixing uppercase and lowercase can induce in errors.
+- **Represented by an id and kind**: Each resource must be represented by its unique identifier (id) and by its namespace (kind).
 
 Examples:
 ![resource examples.png](<../assets/images/resource examples.png>)
@@ -417,10 +418,9 @@ By grouping the attributes that are used in more than one operation in models, *
 
 As examples of common models we used, we have:
 
--   [Common body](#41-common-body)
--   [Self link body](#42-self-link-body)
--   [Pagination](#43-pagination)
--   [Audit](#44-audit)
+-   [Link body](#41-link-body)
+-   [Pagination](#42-pagination)
+-   [Audit](#43-audit)
 -   [Error block](#51-error-block)
 
 ### 3.5. Data type/format
@@ -447,54 +447,8 @@ As examples of common models we used, we have:
 
 To simplify the navigability of the API the following techniques were defined to be applied to all resources.
 
-### 4.1. Common Body
-
-The _common body_ is intended to group attributtes applicable to many or all resources.
-
-Description of fields:
-
-1. **kind**: _resource_'s namespace; for example, a list of customer returns rows with kind "API/VERSION/customers"
-
-2. **id**: Unique identifier of the resource; for example, the id of a customer corresponds to the NIP
-
-- Representation's structure:
-```yaml
-title: Common Body
-...
-allOf:
-  - properties:
-      id:
-        type: string
-        description: Resource's unique identification
-        readOnly: true
-      kind:
-        type: string
-        ...
-        readOnly: true
-    required:
-      - id
-      - kind
-type: object
-``` 
-
-- Example of GET operation (GET /accounts/1234456):
-```json
-{
-  "id":"1234456",
-  "kind":"api.bancobpi.pt/v1/accounts",
-  "accountType":"Checking Account",
-  "status":"Active",
-  "creationDate":"2001-09-11",
-  "bookBalance":1250.23,
-  "availableBalance":250.23,
-  "currency":"EUR",
-  "holderType":"Holder",
-  "holderLevel":1
-}
-``` 
-
-### 4.2. Self Link Body
-The _self link body_ is intended to be an reference to itself, based on pattern [Hypertext Application Language (HAL)](https://datatracker.ietf.org/doc/draft-kelly-json-hal/).
+### 4.1. Link Body
+The _link body_ is intended to be an reference to itself, based on pattern [Hypertext Application Language (HAL)](https://datatracker.ietf.org/doc/draft-kelly-json-hal/).
 
 Description of fields:
 1. **\_links / self**: URL to the resource itself; for example, in lists each line has a URL with a link to the line detail.
@@ -549,7 +503,7 @@ definitions:
 }
 ``` 
 
-### 4.3. Pagination
+### 4.2. Pagination
 
 To perform the pagination of the results, we use the following parameters which can be passed in the _request_ as _querystring_:
 
@@ -663,7 +617,7 @@ definitions:
 ``` 
 > Note that the response code **HTTP 200** means that the result fits on a single page; if a **HTTP 206** code is returned, then it means the result is a partial content (in relation to the whole result), that is, there will be more pages to show. Even the last page will return **HTTP 206**. The way to see if we are on the last page is to check if there is the **next.** attribute in the response header.
 
-### 4.4 Audit
+### 4.3 Audit
 
 It is a block of attributes* created to standardize the need for auditing in some entities/apis.
 
