@@ -616,7 +616,7 @@ definitions:
   }
 }
 ``` 
-> Note that the response code **HTTP 200** means that the result fits on a single page; if a **HTTP 206** code is returned, then it means the result is a partial content (in relation to the whole result), that is, there will be more pages to show. Even the last page will return **HTTP 206**. The way to see if we are on the last page is to check if there is the **next.** attribute in the response header.
+> Ensure that the response code **HTTP 200** is employed for all returned pages; using the **HTTP 206** code is inappropriate for pagination. To determine if we are on the last page, it is advisable to check for the presence of the **next** attribute in the response header.
 
 ### 4.3 Audit
 
