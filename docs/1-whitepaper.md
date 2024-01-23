@@ -731,11 +731,11 @@ SUCCESS
 
 | **HTTP Code** | **Meaning**| Design | Platform | **VERBS** |
 | --------------- | ------------------------------------------------------------------------------------------ | --------- |------------|----------------- |
-| 200             | "OK"<br>The request has succeeded                                                       |    YES    | | GET, PUT, DELETE |
+| 200             | "OK"<br>The request has succeeded                                                       |    YES    | | GET, PUT |
 | 201             | "Created"<br>The request has been fulfilled and resulted in a new resource being created.                                                    | YES | | POST             |
 | 202             | "Accepted"<br>The request has been accepted for processing, but the processing has not been completed.                                         | YES | | POST             |
 | 204             | "No content"<br>The server has fulfilled the request but does not need to return an entity-body, and might want to return updated metainformation.                           | YES | |  DELETE      |
-| 206             | "Partial Content"<br>The server has fulfilled the partial GET request for the resource. E.g. pagination. | YES | | GET              |
+| 206             | "Partial Content"<br>The server has fulfilled the partial GET request for the resource. E.g. large file downloads. | YES | | GET              |
 
 CLIENT ERROR
 
