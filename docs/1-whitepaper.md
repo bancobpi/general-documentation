@@ -846,10 +846,88 @@ Output:
 
 ### Asynchronous APIs
 
-For some business cases, there might the be need to develop APIs that perform long-running tasks. To avoid blocking the execution flow, these APIs should be designed considering the “async-first” principle, that emphasizes prioritizing and designing APIs with asynchronous behavior in mind to support non-blocking operations.
+In most cases, APIs for a client application are designed to respond quickly, on the order of 100 ms or less, many factors can affect the response latency.
 
-The APIs that follow this pattern should contain the word “async” in the path, and the following steps should be taken into consideration:
-1. The client application makes a synchronous call to an API, triggering a long-running operation on the backend – the API responds synchronously, as quickly as possible, with a HTTP 202 (Accepted) status code, acknowledging that the request has been received for processing.
-2. The body of the response holds a location reference pointing to an endpoint that the client can pool to check for the result of the long running operation (status endpoint).
-3. For every successful call to the status endpoint, it returns HTTP 202. While the work is still pending, the status endpoint returns a resource that indicates the work is still in progress.
-4. Once the work is complete, the status endpoint can either return a resource that indicates completion or redirect to another resource URL.
+In some scenarios, however, the work done by backend may be long-running, on the order of seconds, or might be a background process that is executed in minutes or even hours. In that case, it isn't feasible to wait for the work to complete before responding to the request. This situation is a potential problem for any synchronous request-reply pattern.
+
+One solution to this problem is to use HTTP polling. Polling is useful to client-side code,as it can be hard to provide call-back endpoints or use long running connections. Even when callbacks are possible, the extra libraries and services that are required can sometimes add too much extra complexity.
+
+Below is a drawing showing how we should think about Async. Let's use the resource employee accounts as an example.
+
+<table>
+  <p align="center">
+    <img src="../static/async.jpg" alt="Async" height="600" width="700" focus="false"/>
+  </p>
+</table>
+
+1 - POST - /async/employee-accounts 
+
+Response HTTP 202
+
+```json
+{
+  "id": "10499532",
+  "kind": "api.bancobpi.pt/employee-accounts/v1/async/employee-accounts",
+  "status": "waiting",
+  "_links": {
+    "request": {
+      "href": "https://api.bancobpi.pt/employee-accounts/v1/async/employee-accounts/10499532"
+    }
+  }
+}
+````
+
+2 - GET - /async/employee-accounts/{id}
+
+Response HTTP 200
+
+```json
+{
+  "id": "10499532",
+  "kind": "api.bancobpi.pt/employee-accounts/v1/async/employee-accounts",
+  "status": "processing",
+}
+````
+
+3 - GET - /async/employee-accounts/{id}
+
+Response HTTP 302
+
+```json
+{
+  "id": "10499532",
+  "kind": "api.bancobpi.pt/employee-accounts/v1/async/employee-accounts",
+  "status": "done",
+  "resourceId": "4f61",
+  "_links": {
+    "resource": {
+      "href": "https://api.bancobpi.pt/employee-accounts/v1/employee-accounts/4f61"
+    }
+  }
+}
+````
+
+4 - GET - /employee-accounts/{id}
+
+Response HTTP 200
+
+```json
+{
+  "id": "4f61",
+  "kind": "api.bancobpi.pt/employee-accounts/v1/employee-accounts",
+  "externalReference": "50138fbd-33a8-4b5e-b93f-91bd51681793",
+  "taxIdentificationNumber": "123555999",
+  "status": "active",
+  "fullName": "João Silva",
+  "mec": "516611",
+  "email": "joao.silva@bpi.pt",
+  "displayName": "João Silva",
+  "bondType": "retired",
+  "kindType": "internal",
+  "_links": {
+    "self": {
+      "href": "https://api.bancobpi.pt/employee-accounts/v1/employee-accounts/4f61"
+    }
+  }
+}
+````
